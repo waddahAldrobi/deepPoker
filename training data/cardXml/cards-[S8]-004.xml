@@ -1,0 +1,36 @@
+<annotation>
+    <folder>HandSResized</folder>
+    <filename>cards-[S8]-004.jpg</filename>
+    <size>
+        <width>826</width>
+        <height>464</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>S8</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>335</xmin>
+            <ymin>299</ymin>
+            <xmax>402</xmax>
+            <ymax>333</ymax>
+        </bndbox>
+    </object>
+    <object>
+        <name>S8</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>498</xmin>
+            <ymin>122</ymin>
+            <xmax>561</xmax>
+            <ymax>146</ymax>
+        </bndbox>
+    </object>
+</annotation>

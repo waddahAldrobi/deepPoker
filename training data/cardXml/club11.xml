@@ -1,0 +1,23 @@
+<annotation>
+    <folder>foldedData</folder>
+    <filename>club11.jpg</filename>
+    <size>
+        <width>600</width>
+        <height>800</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>Ca</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>194</xmin>
+            <ymin>195</ymin>
+            <xmax>274</xmax>
+            <ymax>336</ymax>
+        </bndbox>
+    </object>
+</annotation>

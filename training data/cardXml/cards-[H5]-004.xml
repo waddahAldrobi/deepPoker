@@ -1,0 +1,36 @@
+<annotation>
+    <folder>HandSResized</folder>
+    <filename>cards-[H5]-004.jpg</filename>
+    <size>
+        <width>826</width>
+        <height>464</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>H5</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>358</xmin>
+            <ymin>350</ymin>
+            <xmax>412</xmax>
+            <ymax>390</ymax>
+        </bndbox>
+    </object>
+    <object>
+        <name>H5</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>444</xmin>
+            <ymin>121</ymin>
+            <xmax>492</xmax>
+            <ymax>157</ymax>
+        </bndbox>
+    </object>
+</annotation>

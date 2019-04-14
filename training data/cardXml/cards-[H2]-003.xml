@@ -1,0 +1,36 @@
+<annotation>
+    <folder>HandSResized</folder>
+    <filename>cards-[H2]-003.jpg</filename>
+    <size>
+        <width>826</width>
+        <height>464</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>H2</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>447</xmin>
+            <ymin>311</ymin>
+            <xmax>474</xmax>
+            <ymax>380</ymax>
+        </bndbox>
+    </object>
+    <object>
+        <name>H2</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>296</xmin>
+            <ymin>106</ymin>
+            <xmax>320</xmax>
+            <ymax>172</ymax>
+        </bndbox>
+    </object>
+</annotation>

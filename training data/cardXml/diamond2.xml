@@ -1,0 +1,23 @@
+<annotation>
+    <folder>foldedData</folder>
+    <filename>diamond2.jpg</filename>
+    <size>
+        <width>384</width>
+        <height>512</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>Dq</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>67</xmin>
+            <ymin>36</ymin>
+            <xmax>104</xmax>
+            <ymax>124</ymax>
+        </bndbox>
+    </object>
+</annotation>

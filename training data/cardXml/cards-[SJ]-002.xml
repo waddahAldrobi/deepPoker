@@ -1,0 +1,36 @@
+<annotation>
+    <folder>HandSResized</folder>
+    <filename>cards-[SJ]-002.jpg</filename>
+    <size>
+        <width>464</width>
+        <height>826</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>Sj</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>288</xmin>
+            <ymin>485</ymin>
+            <xmax>315</xmax>
+            <ymax>571</ymax>
+        </bndbox>
+    </object>
+    <object>
+        <name>Sj</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>70</xmin>
+            <ymin>237</ymin>
+            <xmax>109</xmax>
+            <ymax>330</ymax>
+        </bndbox>
+    </object>
+</annotation>

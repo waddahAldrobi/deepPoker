@@ -1,0 +1,36 @@
+<annotation>
+    <folder>HandSResized</folder>
+    <filename>cards-[S7]-003.jpg</filename>
+    <size>
+        <width>826</width>
+        <height>464</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>S7</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>447</xmin>
+            <ymin>295</ymin>
+            <xmax>471</xmax>
+            <ymax>369</ymax>
+        </bndbox>
+    </object>
+    <object>
+        <name>S7</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>298</xmin>
+            <ymin>93</ymin>
+            <xmax>321</xmax>
+            <ymax>163</ymax>
+        </bndbox>
+    </object>
+</annotation>

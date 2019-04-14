@@ -1,0 +1,36 @@
+<annotation>
+    <folder>cardTrainResized</folder>
+    <filename>cards-[D5]-002.jpg</filename>
+    <size>
+        <width>464</width>
+        <height>826</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>17</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>291</xmin>
+            <ymin>476</ymin>
+            <xmax>321</xmax>
+            <ymax>553</ymax>
+        </bndbox>
+    </object>
+    <object>
+        <name>17</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>91</xmin>
+            <ymin>235</ymin>
+            <xmax>123</xmax>
+            <ymax>320</ymax>
+        </bndbox>
+    </object>
+</annotation>

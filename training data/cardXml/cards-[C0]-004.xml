@@ -1,0 +1,36 @@
+<annotation>
+    <folder>cardTrainResized</folder>
+    <filename>cards-[C0]-004.jpg</filename>
+    <size>
+        <width>826</width>
+        <height>464</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>9</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>527</xmin>
+            <ymin>152</ymin>
+            <xmax>591</xmax>
+            <ymax>178</ymax>
+        </bndbox>
+    </object>
+    <object>
+        <name>9</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>369</xmin>
+            <ymin>324</ymin>
+            <xmax>435</xmax>
+            <ymax>354</ymax>
+        </bndbox>
+    </object>
+</annotation>

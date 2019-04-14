@@ -1,0 +1,23 @@
+<annotation>
+    <folder>foldedData</folder>
+    <filename>spade10.jpg</filename>
+    <size>
+        <width>600</width>
+        <height>800</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>S2</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>76</xmin>
+            <ymin>273</ymin>
+            <xmax>154</xmax>
+            <ymax>422</ymax>
+        </bndbox>
+    </object>
+</annotation>

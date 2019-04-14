@@ -1,0 +1,23 @@
+<annotation>
+    <folder>foldedData</folder>
+    <filename>heart6.jpg</filename>
+    <size>
+        <width>600</width>
+        <height>800</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>H5</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <occluded>0</occluded>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>120</xmin>
+            <ymin>115</ymin>
+            <xmax>186</xmax>
+            <ymax>271</ymax>
+        </bndbox>
+    </object>
+</annotation>
