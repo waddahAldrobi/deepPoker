@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Caslls test image
-        guard let image = UIImage(contentsOfFile: Bundle.main.path(forResource: "Kd", ofType: "jpg")!) else {
+        guard let image = UIImage(contentsOfFile: Bundle.main.path(forResource: "cards-[D0]-002", ofType: "jpg")!) else {
             return
         }
         guard let ciImage = CIImage(image: image)
