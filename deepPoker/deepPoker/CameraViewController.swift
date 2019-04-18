@@ -126,7 +126,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         if let cameraIntrinsicData = CMGetAttachment(sampleBuffer, key: kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix, attachmentModeOut: nil) {
             requestOptions = [.cameraIntrinsics:cameraIntrinsicData]
         }
-        let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: CGImagePropertyOrientation(rawValue: 6)!, options: requestOptions)
+        let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: CGImagePropertyOrientation(rawValue: 7)!, options: requestOptions)
         do {
             try imageRequestHandler.perform(self.requests)
         } catch {
