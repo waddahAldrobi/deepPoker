@@ -15,6 +15,13 @@ import CoreML
 class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     @IBOutlet weak var classificationText: UILabel!
     @IBOutlet weak var cameraView: UIView!
+    @IBOutlet weak var explanationLabel: UILabel!
+    
+    var gameStep = ""
+    var numCards = 0
+    var typeCards = ""
+    
+    var cards = [String]()
     
     private var requests = [VNRequest]()
     
@@ -37,17 +44,17 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        cameraView?.layer.addSublayer(cameraLayer)
-        cameraLayer.frame = cameraView.bounds
         
-        //        cameraLayer.videoGravity = .resizeAspectFill
-        let videoOutput = AVCaptureVideoDataOutput()
-        videoOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_32BGRA)]
-        videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "MyQueue"))
-        self.captureSession.addOutput(videoOutput)
-        self.captureSession.startRunning()
-        setupVision()
+        // Defines title and number of cards
+        defineStep(gameStep: gameStep)
+
+        // Explanation label
+        if numCards != 1 { explanationLabel.text = typeCards + " cards, " + String(numCards) + " separate detections" }
+        else { explanationLabel.text = typeCards + " card, " + String(numCards) + " detection"}
+        
+        // Gives alert
+        self.alert(num: cards.count)
+        
     }
     
     // Takes care of sizing the camera view over the camera layer
@@ -67,7 +74,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     }
     
     
-    // Actuualy performs the classification and updates the camera view
+    // Actually performs the classification and updates the camera view
     func handleClassifications(request: VNRequest, error: Error?) {
         
         let mlmodel = classifier
@@ -77,6 +84,8 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         guard let results = request.results else { return }
         var strings: [String] = []
         var boxes: [CGRect] = []
+        var confidences: [Float] = []
+        var cardDetected = ""
         
         for case let foundObject as VNRecognizedObjectObservation in results {
             let bestLabel = foundObject.labels.first! // Label with highest confidence
@@ -88,6 +97,8 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
             let pct = bestLabel.confidence
             strings.append(String(format: "%.2f", pct) + "%, \(bestLabel.identifier)")
             boxes.append(objectBounds)
+            cardDetected = bestLabel.identifier
+            confidences.append(Float(bestLabel.confidence))
             
         }
         
@@ -97,6 +108,13 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
                 self.highlightLogo(boundingRect: prediction)
             }
             self.classificationText.text = strings.joined(separator: ", ")
+            
+            for i in confidences{
+                if i > 0.75{
+                    self.captureSession.stopRunning()
+                    self.detectedAlert(card: cardDetected )
+                }
+            }
         }
     }
     
@@ -134,10 +152,119 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         }
     }
     
-    @IBAction func dismiss(_ sender: Any) {
-        captureSession.stopRunning()
-        navigationController?.dismiss(animated: true, completion: nil)
+    //  Starts the detection
+    func runDetector () {
+        self.cameraView?.layer.addSublayer(self.cameraLayer)
+        self.cameraLayer.frame = self.cameraView.bounds
+        
+        //        cameraLayer.videoGravity = .resizeAspectFill
+        let videoOutput = AVCaptureVideoDataOutput()
+        videoOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_32BGRA)]
+        videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "MyQueue"))
+        self.captureSession.addOutput(videoOutput)
+        self.captureSession.startRunning()
+        self.setupVision()
     }
     
+    @IBAction func dismiss(_ sender: Any) {
+        captureSession.stopRunning()
+//        For later will need
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func defineStep(gameStep: String){
+        
+        switch gameStep {
+        case "handCards":
+            numCards = 2
+            typeCards = "Hand"
+        case "flopCards":
+            numCards = 3
+            typeCards = "Flop"
+        case "turnCard":
+            numCards = 1
+            typeCards = "Turn"
+        case "riverCard":
+            numCards = 1
+            typeCards = "River"
+            
+        default:
+            print("Error2")
+        }
+
+    }
+    
+
+    
+    func alert (num: Int) {
+        // Create the alert controller
+        let alertController = UIAlertController(title: "Card " + String(num) , message: "Please detect only one card", preferredStyle: .alert)
+        
+        // Create the actions
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+            UIAlertAction in
+            print("OK Pressed")
+            
+            self.runDetector()
+
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
+            UIAlertAction in
+            print("Cancel Pressed")
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        // Add the actions
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        
+        // Present the controller
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    func detectedAlert (card: String) {
+        // Create the alert controller
+        let alertController = UIAlertController(title: "Detected" , message: "Detected a " + card, preferredStyle: .alert)
+        
+        let correctTitle = cards.count == (numCards - 1) ? "Done" : "OK"
+        
+        // Create the actions
+        let okAction = UIAlertAction(title: correctTitle, style: UIAlertAction.Style.default) {
+            UIAlertAction in
+            print("OK Pressed")
+            self.cards.append(card)
+            
+            if self.cards.count == self.numCards {
+                CardsDataSingleton.shared.data[self.typeCards] = self.cards
+                self.navigationController?.popViewController(animated: true)
+            }
+            else{
+                self.captureSession.startRunning()
+            }
+            
+        }
+        
+        let retryAction = UIAlertAction(title: "Retry", style: UIAlertAction.Style.default) {
+            UIAlertAction in
+            print("Retry Pressed")
+            self.captureSession.startRunning()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
+            UIAlertAction in
+            print("Cancel Pressed")
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        // Add the actions
+        alertController.addAction(okAction)
+        alertController.addAction(retryAction)
+        alertController.addAction(cancelAction)
+        
+        // Present the controller
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
     
 }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kob-Km-RYF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kob-Km-RYF">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,38 +17,97 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z4i-Kn-ay6">
-                                <rect key="frame" x="0.0" y="64" width="414" height="548"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFI-yO-yEf">
-                                <rect key="frame" x="0.0" y="612" width="414" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hand Cards" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgy-YR-wBN">
+                                <rect key="frame" x="20" y="199" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flop Cards (First 3)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8b9-cb-83M">
+                                <rect key="frame" x="20" y="266" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Turn Card (4th card)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6M-cR-tjX">
+                                <rect key="frame" x="20" y="326" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="River Card (5th card)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zc2-oM-Awd">
+                                <rect key="frame" x="13" y="385" width="381" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Top 3 probabilites: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fX9-Qn-DQt">
+                                <rect key="frame" x="20" y="462" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wze-nS-cDf">
+                                <rect key="frame" x="10" y="161" width="131" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Detect Hand Cards"/>
+                                <connections>
+                                    <segue destination="h1N-OC-3tg" kind="show" identifier="handCards" id="mTR-Vr-N2v"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfO-U5-7My">
+                                <rect key="frame" x="10" y="228" width="124" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Detect Flop Cards"/>
+                                <connections>
+                                    <segue destination="h1N-OC-3tg" kind="show" identifier="flopCards" id="hsR-ET-FMJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zF4-re-tSY">
+                                <rect key="frame" x="10" y="288" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Detect Turn Card"/>
+                                <connections>
+                                    <segue destination="h1N-OC-3tg" kind="show" identifier="turnCard" id="HK0-pf-w0u"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmX-jr-rG1">
+                                <rect key="frame" x="12" y="355" width="122" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Detect River Card"/>
+                                <connections>
+                                    <segue destination="h1N-OC-3tg" kind="show" identifier="riverCard" id="So8-xz-iAi"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Still needs math" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="711-ZN-jrV">
+                                <rect key="frame" x="20" y="491" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UFI-yO-yEf" secondAttribute="bottom" constant="103" id="0Bg-uM-ltl"/>
-                            <constraint firstItem="z4i-Kn-ay6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GVv-7q-D4A"/>
-                            <constraint firstItem="UFI-yO-yEf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TGn-rC-9WQ"/>
-                            <constraint firstItem="UFI-yO-yEf" firstAttribute="top" secondItem="z4i-Kn-ay6" secondAttribute="bottom" id="Tqr-NS-Iw1"/>
-                            <constraint firstItem="UFI-yO-yEf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XZc-gh-KLz"/>
-                            <constraint firstItem="z4i-Kn-ay6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zgj-b8-Gcu"/>
-                            <constraint firstItem="z4i-Kn-ay6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="b6x-m3-IIt"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="PEo-P3-bKA">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="Rsq-px-OvN">
+                        <barButtonItem key="rightBarButtonItem" title="Test Detector" id="Rsq-px-OvN">
                             <connections>
-                                <segue destination="Y0t-kI-HEC" kind="presentation" id="QN8-7p-wNa"/>
+                                <segue destination="h1N-OC-3tg" kind="show" identifier="test" id="4cz-zE-a88"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="classificationLabel" destination="UFI-yO-yEf" id="ifZ-mg-RIn"/>
-                        <outlet property="imageView" destination="z4i-Kn-ay6" id="q3Z-I6-3FS"/>
+                        <outlet property="flopLabel" destination="8b9-cb-83M" id="MBQ-8C-ga5"/>
+                        <outlet property="handLabel" destination="Wgy-YR-wBN" id="Tpf-yG-yLL"/>
+                        <outlet property="probabilitiesLabel" destination="711-ZN-jrV" id="SP2-FN-2fS"/>
+                        <outlet property="riverLabel" destination="Zc2-oM-Awd" id="fbo-8P-Rjm"/>
+                        <outlet property="turnLabel" destination="C6M-cR-tjX" id="tpt-qY-iZl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -68,6 +127,13 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgy-FF-d9s">
                                         <rect key="frame" x="0.0" y="632" width="414" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Explanation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKq-gT-uJd">
+                                        <rect key="frame" x="8" y="8" width="398" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -100,11 +166,12 @@
                     <connections>
                         <outlet property="cameraView" destination="bPJ-BF-2wf" id="uT7-Jx-rFZ"/>
                         <outlet property="classificationText" destination="Fgy-FF-d9s" id="o1Y-Jp-nex"/>
+                        <outlet property="explanationLabel" destination="JKq-gT-uJd" id="lfv-bD-gOw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IX7-Em-o7f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3276.811594202899" y="-21.195652173913047"/>
+            <point key="canvasLocation" x="2105.7971014492755" y="132.88043478260872"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gdf-hR-Jh0">
@@ -124,23 +191,8 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="132.88043478260872"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="M3o-wA-oD9">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y0t-kI-HEC" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZUj-ga-85r">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="h1N-OC-3tg" kind="relationship" relationship="rootViewController" id="tLy-sa-tdj"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hc8-2R-4V5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2369.5652173913045" y="-21.195652173913047"/>
-        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hsR-ET-FMJ"/>
+    </inferredMetricsTieBreakers>
 </document>
