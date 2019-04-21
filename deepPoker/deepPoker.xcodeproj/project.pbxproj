@@ -17,6 +17,7 @@
 		D40547392263FF6600762EC8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40547382263FF6600762EC8 /* CameraViewController.swift */; };
 		D405473B226407BC00762EC8 /* cards-[D0]-002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D405473A226407BC00762EC8 /* cards-[D0]-002.jpg */; };
 		D434DA0B226AF15C0040C7AB /* CardsDataSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D434DA0A226AF15C0040C7AB /* CardsDataSingleton.swift */; };
+		D4AA335A226C38BC007FEDA1 /* PokerRankClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AA3359226C38BC007FEDA1 /* PokerRankClassifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		D40547382263FF6600762EC8 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		D405473A226407BC00762EC8 /* cards-[D0]-002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cards-[D0]-002.jpg"; sourceTree = "<group>"; };
 		D434DA0A226AF15C0040C7AB /* CardsDataSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsDataSingleton.swift; sourceTree = "<group>"; };
+		D4AA3359226C38BC007FEDA1 /* PokerRankClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerRankClassifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +72,9 @@
 				D40547222263DCFC00762EC8 /* AppDelegate.swift */,
 				D40547242263DCFC00762EC8 /* ViewController.swift */,
 				D434DA0A226AF15C0040C7AB /* CardsDataSingleton.swift */,
-				D40547262263DCFC00762EC8 /* Main.storyboard */,
 				D40547382263FF6600762EC8 /* CameraViewController.swift */,
+				D40547262263DCFC00762EC8 /* Main.storyboard */,
+				D4AA3359226C38BC007FEDA1 /* PokerRankClassifier.swift */,
 				D40547292263DCFC00762EC8 /* Assets.xcassets */,
 				D405472B2263DCFC00762EC8 /* LaunchScreen.storyboard */,
 				D405472E2263DCFC00762EC8 /* Info.plist */,
@@ -156,6 +159,7 @@
 				D40547392263FF6600762EC8 /* CameraViewController.swift in Sources */,
 				D40547232263DCFC00762EC8 /* AppDelegate.swift in Sources */,
 				D40547352263DDF000762EC8 /* CardDetector.mlmodel in Sources */,
+				D4AA335A226C38BC007FEDA1 /* PokerRankClassifier.swift in Sources */,
 				D434DA0B226AF15C0040C7AB /* CardsDataSingleton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

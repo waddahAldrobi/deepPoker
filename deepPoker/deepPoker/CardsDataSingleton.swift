@@ -12,9 +12,11 @@ class CardsDataSingleton {
     
     static let shared = CardsDataSingleton()
     var data: Dictionary<String, [String]>
+    var handsClassifications: Dictionary<String, Int>
     
     private init() {
         data = Dictionary<String, [String]> ()
+        handsClassifications = Dictionary<String, Int>()
 
     }
     

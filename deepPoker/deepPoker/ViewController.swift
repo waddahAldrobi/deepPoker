@@ -24,6 +24,28 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        changeStepLabels()
+        
+        if !(CardsDataSingleton.shared.handsClassifications.isEmpty){
+            print(CardsDataSingleton.shared.handsClassifications)
+            let dict = CardsDataSingleton.shared.handsClassifications
+            var label = ""
+            for i in dict {
+                label = label +  i.0 + ","
+            }
+            probabilitiesLabel.text = label
+        }
+
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! CameraViewController
+        destinationVC.gameStep = segue.identifier ?? "Error1"
+    }
+    
+    // Sets the cards the players has to specfic step
+    func changeStepLabels() {
         let dict = CardsDataSingleton.shared.data
         var label = ""
         if let hand = dict["Hand"] {
@@ -48,12 +70,6 @@ class ViewController: UIViewController {
             label = river.joined(separator: ", ")
             riverLabel.text = label
         }
-    }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! CameraViewController
-        destinationVC.gameStep = segue.identifier ?? "Error1"
     }
 }
 

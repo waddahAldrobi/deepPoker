@@ -198,7 +198,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
     
     func alert (num: Int) {
         // Create the alert controller
-        let alertController = UIAlertController(title: "Card " + String(num) , message: "Please detect only one card", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Card " + String(num+1) , message: "Please detect only one card", preferredStyle: .alert)
         
         // Create the actions
         let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
@@ -237,12 +237,13 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
             
             if self.cards.count == self.numCards {
                 CardsDataSingleton.shared.data[self.typeCards] = self.cards
+                self.classifyHands()
+                
                 self.navigationController?.popViewController(animated: true)
             }
             else{
                 self.captureSession.startRunning()
             }
-            
         }
         
         let retryAction = UIAlertAction(title: "Retry", style: UIAlertAction.Style.default) {
@@ -267,4 +268,66 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
         
     }
     
+    // Finds the type of hands the player got
+    func classifyHands() {
+        
+        let dict = CardsDataSingleton.shared.data
+        
+        var allCards = [String]()
+        
+        
+        if let hand = dict["Hand"], let flop = dict["Flop"], let turn = dict["Turn"], let river = dict["River"] {
+            allCards = hand + flop + turn + river
+            let list = self.combos(elements: allCards, k: 5)
+            
+            for i in list{
+                // Checks that the combinations are unique
+                if i.count == Set(i).count {
+                    runHandClassifier(c1:i[0], c2:i[1], c3:i[2], c4:i[3], c5:i[4])
+                    
+                }
+            }
+        }
+        else if let hand = dict["Hand"], let flop = dict["Flop"], let turn = dict["Turn"]  {
+            allCards = hand + flop + turn
+            let list = self.combos(elements: allCards, k: 5)
+            
+            for i in list{
+                // Checks that the combinations are unique
+                if i.count == Set(i).count {
+                    runHandClassifier(c1:i[0], c2:i[1], c3:i[2], c4:i[3], c5:i[4])
+                    
+                }
+            }
+        }
+        else if let hand = dict["Hand"], let flop = dict["Flop"]  {
+            allCards = hand + flop
+            runHandClassifier(c1:allCards[0], c2:allCards[1], c3:allCards[2], c4:allCards[3], c5:allCards[4])
+        }
+        
+    }
+    
+    // Used to find combinations
+    func combos<T>(elements: ArraySlice<T>, k: Int) -> [[T]] {
+        if k == 0 {
+            return [[]]
+        }
+        
+        guard let first = elements.first else {
+            return []
+        }
+        
+        let head = [first]
+        let subcombos = combos(elements: elements, k: k - 1)
+        var ret = subcombos.map { head + $0 }
+        ret += combos(elements: elements.dropFirst(), k: k)
+        
+        return ret
+    }
+    
+    func combos<T>(elements: Array<T>, k: Int) -> [[T]] {
+        return combos(elements: ArraySlice(elements), k: k)
+    }
+    
 }
+
