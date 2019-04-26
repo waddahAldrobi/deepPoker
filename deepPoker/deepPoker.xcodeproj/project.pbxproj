@@ -17,6 +17,8 @@
 		D40547392263FF6600762EC8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40547382263FF6600762EC8 /* CameraViewController.swift */; };
 		D405473B226407BC00762EC8 /* cards-[D0]-002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D405473A226407BC00762EC8 /* cards-[D0]-002.jpg */; };
 		D434DA0B226AF15C0040C7AB /* CardsDataSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D434DA0A226AF15C0040C7AB /* CardsDataSingleton.swift */; };
+		D465E90B2272DC5300178A2E /* rankings.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D465E90A2272DC5300178A2E /* rankings.jpg */; };
+		D465E90D2272DC8900178A2E /* RulesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D465E90C2272DC8900178A2E /* RulesVC.swift */; };
 		D4AA335A226C38BC007FEDA1 /* PokerRankClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AA3359226C38BC007FEDA1 /* PokerRankClassifier.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +35,8 @@
 		D40547382263FF6600762EC8 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		D405473A226407BC00762EC8 /* cards-[D0]-002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cards-[D0]-002.jpg"; sourceTree = "<group>"; };
 		D434DA0A226AF15C0040C7AB /* CardsDataSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsDataSingleton.swift; sourceTree = "<group>"; };
+		D465E90A2272DC5300178A2E /* rankings.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rankings.jpg; sourceTree = "<group>"; };
+		D465E90C2272DC8900178A2E /* RulesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesVC.swift; sourceTree = "<group>"; };
 		D4AA3359226C38BC007FEDA1 /* PokerRankClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerRankClassifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,12 +72,14 @@
 			children = (
 				D40547342263DDF000762EC8 /* CardDetector.mlmodel */,
 				D40547362263E70200762EC8 /* Kd.jpg */,
+				D465E90A2272DC5300178A2E /* rankings.jpg */,
 				D405473A226407BC00762EC8 /* cards-[D0]-002.jpg */,
 				D40547222263DCFC00762EC8 /* AppDelegate.swift */,
 				D40547242263DCFC00762EC8 /* ViewController.swift */,
 				D434DA0A226AF15C0040C7AB /* CardsDataSingleton.swift */,
 				D40547382263FF6600762EC8 /* CameraViewController.swift */,
 				D40547262263DCFC00762EC8 /* Main.storyboard */,
+				D465E90C2272DC8900178A2E /* RulesVC.swift */,
 				D4AA3359226C38BC007FEDA1 /* PokerRankClassifier.swift */,
 				D40547292263DCFC00762EC8 /* Assets.xcassets */,
 				D405472B2263DCFC00762EC8 /* LaunchScreen.storyboard */,
@@ -144,6 +150,7 @@
 				D405472D2263DCFC00762EC8 /* LaunchScreen.storyboard in Resources */,
 				D405473B226407BC00762EC8 /* cards-[D0]-002.jpg in Resources */,
 				D405472A2263DCFC00762EC8 /* Assets.xcassets in Resources */,
+				D465E90B2272DC5300178A2E /* rankings.jpg in Resources */,
 				D40547282263DCFC00762EC8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +167,7 @@
 				D40547232263DCFC00762EC8 /* AppDelegate.swift in Sources */,
 				D40547352263DDF000762EC8 /* CardDetector.mlmodel in Sources */,
 				D4AA335A226C38BC007FEDA1 /* PokerRankClassifier.swift in Sources */,
+				D465E90D2272DC8900178A2E /* RulesVC.swift in Sources */,
 				D434DA0B226AF15C0040C7AB /* CardsDataSingleton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

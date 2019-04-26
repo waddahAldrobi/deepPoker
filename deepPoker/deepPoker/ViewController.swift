@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var turnLabel: UILabel!
     @IBOutlet weak var riverLabel: UILabel!
     
-    @IBOutlet weak var probabilitiesLabel: UILabel!
+    @IBOutlet weak var probabilitiesTextView: UITextView!
     
     var handCards = [String]()
     
@@ -28,20 +28,40 @@ class ViewController: UIViewController {
         
         if !(CardsDataSingleton.shared.handsClassifications.isEmpty){
             print(CardsDataSingleton.shared.handsClassifications)
-            let dict = CardsDataSingleton.shared.handsClassifications
-            var label = ""
-            for i in dict {
-                label = label +  i.0 + ","
-            }
-            probabilitiesLabel.text = label
+        let dict = CardsDataSingleton.shared.handsClassifications
+            
+        let sortedKeys = Array(dict.keys).sorted() {
+            let obj1 = dict[$0] as! Int// get ob associated w/ key 1
+            let obj2 = dict[$1] as! Int// get ob associated w/ key 2
+            return obj1 > obj2
         }
+        var label = ""
+        print(sortedKeys)
+        for i in sortedKeys {
+            label = label +  i + "\n"
+        }
+
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.alignment = .center
+        let string = label
+        let attributedString = NSMutableAttributedString.init(string: string, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18.0)])
+        attributedString.addAttributes([.paragraphStyle: paragraph], range: (string as NSString).range(of: string))
+        let range = (string as NSString).range(of: sortedKeys.first ?? "Not Enough Cards")
+        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.green, range: range)
+
+        probabilitiesTextView.attributedText = attributedString
+        }
+        
 
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! CameraViewController
-        destinationVC.gameStep = segue.identifier ?? "Error1"
+        if segue.identifier != "rules" {
+            let destinationVC = segue.destination as! CameraViewController
+            destinationVC.gameStep = segue.identifier ?? "Error1"
+        }
+        
     }
     
     // Sets the cards the players has to specfic step
@@ -71,6 +91,36 @@ class ViewController: UIViewController {
             riverLabel.text = label
         }
     }
+    
+    // CHnages color of string
+    func getColoredText(text: String) -> NSMutableAttributedString {
+        let string:NSMutableAttributedString = NSMutableAttributedString(string: text)
+        let words:[String] = text.components(separatedBy:" ")
+        var w = ""
+        
+        for word in words {
+            if (word.hasPrefix("{|") && word.hasSuffix("|}")) {
+                let range:NSRange = (string.string as NSString).range(of: word)
+                string.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.green, range: range)
+                w = word.replacingOccurrences(of: "{|", with: "")
+                w = w.replacingOccurrences(of:"|}", with: "")
+                string.replaceCharacters(in: range, with: w)
+            }
+        }
+        return string
+    }
+    
+    @IBAction func reset(_ sender: Any) {
+        CardsDataSingleton.shared.data = Dictionary<String, [String]> ()
+        CardsDataSingleton.shared.handsClassifications = Dictionary<String, Int>()
+        
+        handLabel.text = "Hand Cards"
+        flopLabel.text = "Flop Cards (First 3)"
+        turnLabel.text = "Turn Card (4th card)"
+        riverLabel.text = "River Card (5th card)"
+        probabilitiesTextView.text = "Not Enough Cards (At least 5)"
+    }
+    
 }
 
 
@@ -86,7 +136,7 @@ class ViewController: UIViewController {
 //override func viewDidLoad() {
 //    super.viewDidLoad()
 //
-//    // Caslls test image
+//    // Calls test image
 //    guard let image = UIImage(contentsOfFile: Bundle.main.path(forResource: "cards-[D0]-002", ofType: "jpg")!) else {
 //        return
 //    }
