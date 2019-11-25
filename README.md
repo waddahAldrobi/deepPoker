@@ -1,6 +1,6 @@
 # DeepPoker
 
-```DeepPoker``` is an app that supports people who are playing Poker for the first time to determine what their strongest hand is. <br/>
+```DeepPoker``` is an app that supports people playing Poker for the first time by determing their strongest hand. <br/>
 The app levergaes a computer vision model so that the user does not have to type into the app the card they have.<br/>
 
 
