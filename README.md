@@ -24,7 +24,7 @@ Finally, run ```train.py```
 
 ## Demo of the DeepPoker App
 
-<img src="https://github.com/waddahAldrobi/deepPoker/blob/master/demo.gif" width="40" height="40" />
+<img src="https://github.com/waddahAldrobi/deepPoker/blob/master/demo.gif" width="300" height="519" />
 
 
 
